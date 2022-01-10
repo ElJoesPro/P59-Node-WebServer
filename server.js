@@ -4,6 +4,8 @@ const hbs = require('hbs');
 
 require('./hbs/helpers');
 
+const port = process.env.PORT || 3000;
+
 app.use(express.static(__dirname + '/public'));
 
 hbs.registerPartials(__dirname + '/views/parciales');
@@ -28,6 +30,6 @@ hbs.registerHelper('capitalizar', (texo) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log('Escuchando peticiones en el puerto 3000');
+app.listen(port, () => {
+    console.log(`Escuchando peticiones en el puerto ${port}`);
 });
