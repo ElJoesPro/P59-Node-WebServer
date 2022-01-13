@@ -18,6 +18,12 @@ app.get('/', (req, res) => {
     });
 });
 
+app.get('/acerca', (req, res) => {
+    res.render('acerca', {
+        titulo: "Acerca"
+    });
+});
+
 //Registrar un helper
 hbs.registerHelper('getAnio', () => {
     return new Date().getFullYear();
